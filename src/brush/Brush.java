@@ -1,9 +1,10 @@
 package brush;
 
 public abstract class Brush {
-	public int HEIGHT;
-	public int WIDTH;
-	public String BRUSH_NAME;
+	protected int HEIGHT;
+	protected int WIDTH;
+	protected int[][] pattern;
+	protected String BRUSH_NAME;
 	
 	public int getHEIGHT() {
 		return HEIGHT;
@@ -22,6 +23,10 @@ public abstract class Brush {
 	}
 	public void setBRUSH_NAME(String bRUSH_NAME) {
 		BRUSH_NAME = bRUSH_NAME;
+	}
+	
+	public boolean isBrushMasked(int u, int v) {
+		return pattern[u][v]>0?true:false;
 	}
 	
 

@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 public class FileManager {
 	
 	// new file
-	public File newFile(String fileName) {
+	public File newFile() {
 		return FileFactory.getOneFile();
 	}
 	
@@ -20,6 +20,10 @@ public class FileManager {
 		}catch(Exception e) {
 			System.out.println("save Failed");
 		}
+	}
+	//file on timestamp
+	public File timestampFile() {
+		return FileFactory.newTimestampFile();
 	}
 //	
 //	loadFile

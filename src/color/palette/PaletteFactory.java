@@ -1,10 +1,8 @@
 package color.palette;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 public class PaletteFactory {
-	static final String prefix = "color.palette.";
+	static final String PREFIX = "color.palette.";
 	String[] PALETTES = {
 			"RedPalette",
 			"GreenPalette",
@@ -15,7 +13,7 @@ public class PaletteFactory {
 	
 	public static Palette getPalette(String paletteName) {
 		try {
-			return (Palette) Class.forName(prefix+paletteName).newInstance();
+			return (Palette) Class.forName(PREFIX+paletteName).newInstance();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
