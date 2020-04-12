@@ -12,11 +12,9 @@ public class FileFactory {
 			"output3"
 	};
 	public static File getOneFile() {
-		return new File(ROOT_FOLDER + FILENAMES[2] + FILE_FORMAT);
+		return new File(ROOT_FOLDER + "output" + FILE_FORMAT);
 	}
 	public static File newTimestampFile() {
-		return new File(ROOT_FOLDER + "output_"+new Timestamp(System.currentTimeMillis()).toString() + FILE_FORMAT);
+		return new File(ROOT_FOLDER + "output_"+""+new Timestamp(System.currentTimeMillis()).getTime() + FILE_FORMAT);
 	}
-	
-
 }

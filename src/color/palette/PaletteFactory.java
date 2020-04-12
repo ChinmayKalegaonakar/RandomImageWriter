@@ -7,6 +7,7 @@ public class PaletteFactory {
 			"RedPalette",
 			"GreenPalette",
 			"BluePalette",
+			"FullPalette",
 			"EmptyPalette"
 			
 	};

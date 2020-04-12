@@ -5,6 +5,7 @@ import java.io.File;
 
 import algorithm.RandomPixels;
 import brush.Brush;
+import brush.CrossBrush;
 import brush.SquareBrush;
 import color.ColorManager;
 import color.palette.Palette;
@@ -26,9 +27,10 @@ public class CanvasWriter {
 	File file;
 	public CanvasWriter() {
 		fileManager = new FileManager();
-		Palette redPallete = PaletteFactory.getPalette("GreenPalette");
-		colorManager = new ColorManager(redPallete);
-		Brush sqBrush = new SquareBrush(8,8);
+		Palette palette = PaletteFactory.getPalette("FullPalette");
+		colorManager = new ColorManager(palette);
+		Brush sqBrush = new SquareBrush(4,8);
+		Brush crBrush = new CrossBrush(15,3);
 		randomPixels = new RandomPixels(colorManager,sqBrush);
 		image = new BufferedImage(WIDTH , HEIGHT , COLOR_MODE);
 		file = fileManager.timestampFile();
