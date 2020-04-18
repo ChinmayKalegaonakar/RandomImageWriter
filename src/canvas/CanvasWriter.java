@@ -2,9 +2,12 @@ package canvas;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Properties;
 
 import algorithm.RandomPixels;
 import brush.Brush;
+import brush.BrushFactory;
+import brush.CircleBrush;
 import brush.CrossBrush;
 import brush.SquareBrush;
 import color.ColorManager;
@@ -20,6 +23,7 @@ public class CanvasWriter {
 	public static int COLOR_MODE = BufferedImage.TYPE_INT_ARGB;
 //	public static final String FILENAME = "/home/chinmay/eclipse-workspace/RandomImageWriter/resources/output.png";
 	
+	Properties properties;
 	FileManager fileManager;
 	RandomPixels randomPixels;
 	BufferedImage image;
@@ -27,10 +31,15 @@ public class CanvasWriter {
 	File file;
 	public CanvasWriter() {
 		fileManager = new FileManager();
-		Palette palette = PaletteFactory.getPalette("FullPalette");
+		properties = fileManager.loadPropertyFile();
+		int height = Integer.parseInt((String) properties.getOrDefault("canvas.height",String.valueOf(HEIGHT)));
+		int width = Integer.parseInt((String) properties.getOrDefault("canvas.width",String.valueOf(WIDTH)));
+		String paletteName = properties.getProperty("canvas.palette");
+		String brushName = properties.getProperty("canvas.brush");
+		Brush brush = BrushFactory.getBrush(brushName);
+		Palette palette = PaletteFactory.getPalette(paletteName);
 		colorManager = new ColorManager(palette);
-		Brush sqBrush = new SquareBrush(4,8);
-		Brush crBrush = new CrossBrush(15,3);
+		Brush sqBrush = new SquareBrush(4,4);
 		randomPixels = new RandomPixels(colorManager,sqBrush);
 		image = new BufferedImage(WIDTH , HEIGHT , COLOR_MODE);
 		file = fileManager.timestampFile();
