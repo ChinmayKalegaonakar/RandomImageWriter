@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.util.logging.Handler;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -18,6 +19,10 @@ public class RandomImageWriter {
 		
 		LOGGER.info("writing to file");
 		CanvasWriter canvas = new CanvasWriter();
+		BufferedImage image1 = canvas.createImage();
+		BufferedImage image2 = canvas.createImage();
+		final BufferedImage image = canvas.combineOnRight(image1, image2);
+		canvas.saveImage(image);
 		LOGGER.info("wrote to file");
 		// getfile
 		// give to canvas

@@ -6,7 +6,7 @@ import brush.Brush;
 import color.ColorManager;
 import util.Util;
 
-public class RandomPixels implements Algorithm {
+public class RandomPixels extends Algorithm {
 	public ColorManager colorManager;
 	public Brush brush;
 	public RandomPixels(ColorManager colm, Brush brush){
@@ -14,7 +14,7 @@ public class RandomPixels implements Algorithm {
 		this.brush = brush;
 	}
 	
-	public BufferedImage randomRandom(BufferedImage image) {
+	public BufferedImage paint(BufferedImage image) {
 		int height = image.getHeight();
 		int width = image.getWidth();
 		int pixel = 0;

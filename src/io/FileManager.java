@@ -21,7 +21,6 @@ public class FileManager {
 	// saveFile
 	public void saveFile(File file, BufferedImage bufferedImage) {
 		try {
-			
 			ImageIO.write(bufferedImage,"png",file);
 			LOGGER.info("save successfull");
 			LOGGER.info("location "+file.getAbsolutePath());
@@ -42,6 +41,7 @@ public class FileManager {
 			FileReader fileReader = new FileReader(propertyFile);
 			Properties prop = new Properties();
 			prop.load(fileReader);
+			LOGGER.info("loaded config file");
 			return prop;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -54,6 +54,12 @@ public class FileManager {
 //	
 //	loadFile
 //	
+	
+	public File loadFile(String filePath) {
+		return new File(filePath);
+	}
 //	mergeFiles
+	
+	// append right
 
 }

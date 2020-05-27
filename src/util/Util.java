@@ -1,5 +1,12 @@
 package util;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+
 public class Util {
 	
 	public static int ensureRange(int value, int min, int max) {
@@ -10,6 +17,9 @@ public class Util {
 	}
 	public static boolean inBetween(int number,int start,int end) {
 		if(number>=start && number <= end) return true; else return false;
+	}
+	public static BufferedImage imageFromFile(File file) throws IOException {
+		return ImageIO.read(file);
 	}
 
 }
