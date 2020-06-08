@@ -21,7 +21,7 @@ public class RandomImageWriter {
 		CanvasWriter canvas = new CanvasWriter();
 		BufferedImage image1 = canvas.createImage();
 		BufferedImage image2 = canvas.createImage();
-		final BufferedImage image = canvas.combineOnRight(image1, image2);
+		final BufferedImage image = canvas.combine(image1, image2,"RIGHT");
 		canvas.saveImage(image);
 		LOGGER.info("wrote to file");
 		// getfile

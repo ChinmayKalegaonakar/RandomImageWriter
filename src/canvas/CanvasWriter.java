@@ -88,5 +88,64 @@ public class CanvasWriter {
 		
 		return image;
 	}
+	
+	public BufferedImage combineBelow(BufferedImage bi1, BufferedImage bi2) {
+		int bi1Height = bi1.getHeight();
+		int bi2Height = bi2.getHeight();
+		int bi1Width = bi1.getWidth();
+		int bi2Width = bi2.getWidth();
+		
+		int width = bi1Width > bi2Width ? bi1Width: bi2Width;
+		int height = bi1Height + bi2Height;
+		
+		BufferedImage image = new BufferedImage(width , height , COLOR_MODE);
+		
+		for(int i = 0; i < bi1Width; i++ ) {
+			for(int j = 0; j < bi1Height; j++ ) {
+				image.setRGB(i, j, bi1.getRGB(i, j));
+			}
+		}
+		for(int i = 0; i < width; i++ ) {
+			for(int j = bi1Height; j < height; j++ ) {
+				image.setRGB(i, j, bi2.getRGB(i, j-bi1Height));
+			}
+		}
+		
+		return image;
+	}
+	
+	public BufferedImage combineDiagonal(BufferedImage bi1, BufferedImage bi2) {
+		int bi1Height = bi1.getHeight();
+		int bi2Height = bi2.getHeight();
+		int bi1Width = bi1.getWidth();
+		int bi2Width = bi2.getWidth();
+		
+		int width = bi1Width + bi2Width;
+		int height = bi1Height + bi2Height;
+		
+		BufferedImage image = new BufferedImage(width , height , COLOR_MODE);
+		
+		for(int i = 0; i < bi1Width; i++ ) {
+			for(int j = 0; j < bi1Height; j++ ) {
+				image.setRGB(i, j, bi1.getRGB(i, j));
+			}
+		}
+		for(int i = bi1Width; i < width; i++ ) {
+			for(int j = bi1Height; j < height; j++ ) {
+				image.setRGB(i, j, bi2.getRGB(i-bi1Width, j-bi1Height));
+			}
+		}
+		
+		return image;
+	}
+	
+	public BufferedImage combine(BufferedImage bi1, BufferedImage bi2, String direction) {
+		switch(direction) {
+		case "RIGHT" : return combineOnRight(bi1,bi2);
+		case "BELOW" : return combineBelow(bi1,bi2); 
+		case "DIAGONAL" : return combineDiagonal(bi1,bi2); 
+		default : return combineOnRight(bi1,bi2); 
+		}
+	}
 
 }
