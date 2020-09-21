@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 public class FileManager {
 	private static final Logger LOGGER = Logger.getLogger("");
-	private static final String PROPERTY_FILE = "/home/chinmay/eclipse-workspace/RandomImageWriter/resources/rir.properties";
+	private static final String PROPERTY_FILE = "./rir.properties";
 	
 	// new file
 	public File newFile() {

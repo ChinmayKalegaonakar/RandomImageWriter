@@ -3,6 +3,9 @@ package brush;
 import util.Util;
 
 public class CrossBrush extends Brush {
+	public CrossBrush(){
+		this(4);
+	}
 	public CrossBrush(int height, int width,int thickness) {
 		this.HEIGHT = Util.moreThan2(height);
 		this.WIDTH = Util.moreThan2(width);

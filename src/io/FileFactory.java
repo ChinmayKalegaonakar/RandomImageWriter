@@ -4,7 +4,7 @@ import java.io.File;
 import java.sql.Timestamp;
 
 public class FileFactory {
-	static final String ROOT_FOLDER = "/home/chinmay/eclipse-workspace/RandomImageWriter/resources/";
+	static final String ROOT_FOLDER = "./images/";
 	static final String FILE_FORMAT = ".png";
 	static final String[] FILENAMES = {
 			"output1",

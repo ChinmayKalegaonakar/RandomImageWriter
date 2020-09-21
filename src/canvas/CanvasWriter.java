@@ -1,14 +1,16 @@
 package canvas;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Properties;
 import java.util.logging.Logger;
 
 import algorithm.Algorithm;
+import algorithm.ConcentricCircles;
+import algorithm.ConcentricSquares;
 import algorithm.RandomPixels;
+import algorithm.RandomPolygon;
+import algorithm.StraightLines;
 import brush.Brush;
 import brush.BrushFactory;
 import color.ColorManager;
@@ -52,7 +54,7 @@ public class CanvasWriter {
 	
 	public BufferedImage createImage() {
 		// replace with algo get image
-		Algorithm painter = new RandomPixels(colorManager,brush);
+		Algorithm painter = new RandomPolygon(colorManager,100);
 		BufferedImage retImage =  painter.paint(image);
 		clearBuffer();
 		return retImage;

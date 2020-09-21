@@ -3,7 +3,9 @@ package brush;
 public class CircleBrush extends Brush{
 	
 	//bresenhams
-	public CircleBrush() {}
+	public CircleBrush() {
+        this(2);
+    }
 	public CircleBrush(int radius) {
 		this.WIDTH = 2*radius;
 		this.HEIGHT = 2*radius;
