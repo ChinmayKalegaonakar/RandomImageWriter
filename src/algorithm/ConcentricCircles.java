@@ -3,9 +3,7 @@ package algorithm;
 
 import java.awt.image.BufferedImage;
 
-import brush.Brush;
 import color.ColorManager;
-import util.Util;
 import java.awt.Graphics2D;
 import java.awt.Color;
 

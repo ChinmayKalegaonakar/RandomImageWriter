@@ -6,6 +6,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 import algorithm.Algorithm;
+import algorithm.Arches;
 import algorithm.ConcentricCircles;
 import algorithm.ConcentricSquares;
 import algorithm.RandomPixels;
@@ -54,7 +55,7 @@ public class CanvasWriter {
 	
 	public BufferedImage createImage() {
 		// replace with algo get image
-		Algorithm painter = new RandomPolygon(colorManager,100);
+		Algorithm painter = new Arches(colorManager);
 		BufferedImage retImage =  painter.paint(image);
 		clearBuffer();
 		return retImage;
