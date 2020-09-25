@@ -8,7 +8,8 @@ public class PaletteFactory {
 			"GreenPalette",
 			"BluePalette",
 			"FullPalette",
-			"EmptyPalette"
+			"EmptyPalette",
+			"BlackPalette"
 			
 	};
 	

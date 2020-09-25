@@ -51,6 +51,16 @@ public class ColorManager {
 		return (a<<24)|(r<<16) | (g<<8) | b;
 	}
 
+	public int getGrayFromPalette() {
+		int colid = (int)(Math.random()*P_SIZE);
+		final int r = palette.getRed(colid);
+		final int g = palette.getGreen(colid);
+		final int b = palette.getBlue(colid);
+		final int a = 255;
+		return (a<<24)|(r<<16) | (g<<8) | b;
+	}
+
+
 	public Color getColorFromRandomPalette() {
 		final int r = palette.getRed((int)(Math.random()*P_SIZE));
 		final int g = palette.getGreen((int)(Math.random()*P_SIZE));

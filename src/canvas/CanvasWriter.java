@@ -9,6 +9,7 @@ import algorithm.Algorithm;
 import algorithm.Arches;
 import algorithm.ConcentricCircles;
 import algorithm.ConcentricSquares;
+import algorithm.Noise;
 import algorithm.RandomPixels;
 import algorithm.RandomPolygon;
 import algorithm.StraightLines;
@@ -55,7 +56,7 @@ public class CanvasWriter {
 	
 	public BufferedImage createImage() {
 		// replace with algo get image
-		Algorithm painter = new Arches(colorManager);
+		Algorithm painter = new Noise(colorManager);
 		BufferedImage retImage =  painter.paint(image);
 		clearBuffer();
 		return retImage;
