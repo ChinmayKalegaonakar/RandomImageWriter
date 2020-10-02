@@ -13,6 +13,7 @@ import algorithm.Noise;
 import algorithm.RandomPixels;
 import algorithm.RandomPolygon;
 import algorithm.StraightLines;
+import algorithm.SineWaves;
 import brush.Brush;
 import brush.BrushFactory;
 import color.ColorManager;
@@ -56,7 +57,7 @@ public class CanvasWriter {
 	
 	public BufferedImage createImage() {
 		// replace with algo get image
-		Algorithm painter = new Noise(colorManager);
+		Algorithm painter = new SineWaves(colorManager);
 		BufferedImage retImage =  painter.paint(image);
 		clearBuffer();
 		return retImage;
